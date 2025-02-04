@@ -1,0 +1,33 @@
+body.dark {
+  --grid-lines: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+}
+
+:root {
+  --grid-lines: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 1px, transparent 1px),
+    linear-gradient(rgba(3, 3, 3, 0.2) 1px, transparent 1px);
+}
+
+.designers {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+
+/* Space-inspired grid lines */
+.designers::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateY(-5px);
+  background-image: var(--grid-lines);
+  background-size: 40px 30px;
+  opacity: 0.3;
+  z-index: 1;
+}
+

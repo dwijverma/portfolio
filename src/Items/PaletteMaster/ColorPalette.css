@@ -1,0 +1,150 @@
+:root {
+  
+  --palette-background-color: rgba(75, 75, 75, 0.8);
+}
+
+body.dark {
+  --palette-background-color: rgba(75, 75, 75, 0.5);
+}
+
+.color-palette {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: fit-content;
+  padding: 20px;
+  background: var(--palette-background-color); /* glassy effect */
+  backdrop-filter: blur(10px);
+  border: 0.5px solid var(--text-color);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(-20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "poppins";
+  z-index: -1;
+}
+
+.color-palette.active {
+  z-index: 1000;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.color-palette.dark {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.color-boxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.color-box {
+  width: 100px;
+  height: 100px;
+  background-color: #cccccc; /* placeholder for dynamic colors */
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.sub-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+}
+
+input[type="number"] {
+  background-color: transparent;
+  color: var(--text-color);
+  width: 50px;
+  padding: 5px;
+  border-radius: 4px;
+  align-self: stretch;
+  border: 1px solid #ccc;
+}
+
+.select-scheme {
+  background-color: transparent;
+  color: var(--text-color);
+  padding: 5px;
+  border-radius: 4px;
+  align-self: stretch;
+  border: 1px solid #ccc;
+}
+
+.select-scheme option {
+  background: var(--compartment-color);
+  color: var(--text-color);
+}
+
+.close-btn {
+  background: transparent;
+  height: 30px;
+  width: 30px;
+  border: 2.5px solid var(--text-color);
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  color: var(--text-color);
+  justify-self: center;
+}
+
+.close-btn:hover {
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+}
+
+.close-btn:first-child {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.copy-colors {
+  background: transparent;
+  cursor: pointer;
+  padding: 5px;
+  border: 2px solid var(--text-color);
+  border-radius: 20px;
+  height: 45px;
+  width: 140px;
+  color: var(--text-color);
+  transition: all 0.2s ease-in-out;
+  font-weight: 600;
+}
+
+.copy-colors:hover {
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+}

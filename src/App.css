@@ -1,0 +1,218 @@
+:root {
+  --background-color: #e8e8e8;
+  --text-color: #222;
+  --compartment-color: white;
+  --button-background-color: #111;
+  --button-text-color: #fff;
+  --compartment-box-shadow: 0.3em 0.3em 0 0.1em black;
+  --compartment-border-color: black;
+  --compartment-border-style: solid;
+
+  --palette-color: linear-gradient(#f36a6a 0%, #c54747 100%);
+  --palette-gradient-1: radial-gradient(
+    circle at 20% 20%,
+    #ebf2f3,
+    transparent
+  );
+  --palette-gradient-2: radial-gradient(
+    circle at 80% 80%,
+    #e8f0ef,
+    transparent
+  );
+
+  --spotify-color: linear-gradient(#59e47c 0%, #2ee75d 100%);
+}
+
+body.dark {
+  --background-color: #1a1a1a;
+  --text-color: #f5f5f5;
+  --compartment-color: #111;
+  --button-background-color: #ccc;
+  --button-text-color: #111;
+  --compartment-box-shadow: 0.3em 0.3em 0 0.1em black;
+  --compartment-border-color: black;
+  --compartment-border-style: solid;
+
+  --palette-color: linear-gradient(#5c0b0b 0%, #722e2e 100%);
+  --palette-gradient-1: radial-gradient(
+    circle at 20% 20%,
+    #ff9a9e,
+    transparent
+  );
+  --palette-gradient-2: radial-gradient(
+    circle at 80% 80%,
+    #fad0c4,
+    transparent
+  );
+
+  --spotify-color: linear-gradient(#0b5c19 0%, #2e7234 100%);
+}
+
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+.container {
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
+  gap: 25px;
+  box-sizing: border-box;
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
+    max-width: 1200px;
+    gap: 50px;
+  }
+}
+
+.special-border {
+  border: 0.4rem solid;
+  border-radius: 3rem;
+  box-shadow: var(--compartment-box-shadow);
+  border-color: var(--compartment-border-color);
+
+  color: var(--text-color);
+  box-sizing: border-box;
+  height: 100%;
+  background: var(--compartment-color);
+  overflow: hidden;
+}
+
+.special-header {
+  border: 0.4rem solid;
+  border-radius: 2rem;
+  box-shadow: var(--compartment-box-shadow);
+  border-color: var(--compartment-border-color);
+  color: var(--text-color);
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+.profile {
+  border: 1px solid #222;
+  border-radius: 100%;
+  box-shadow: 0.3em 0.3em 0 0.1em black;
+  border-color: black;
+  border-width: 0.3em;
+  border-style: solid;
+  transition: all 0.5s ease-in-out;
+}
+
+.spotify-bg {
+  position: relative; /* Ensure child elements position correctly */
+  background: var(--spotify-color);
+  overflow: hidden;
+}
+
+.spotify-bg::before,
+.spotify-bg::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(30px); /* Increased blur for a smoother effect */
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.spotify-bg::before {
+  width: 150px;
+  height: 100px;
+  right: -10%;
+  top: 35%;
+  background: radial-gradient(circle at 20% 20%, #aeff9a, transparent);
+}
+
+.spotify-bg::after {
+  width: 180px;
+  height: 120px;
+  left: -15%;
+  top: -15%;
+  background: radial-gradient(circle at 80% 80%, #c4fac8, transparent);
+}
+
+@media screen and (min-width: 768px) {
+  .spotify-bg::before {
+    width: 300px;
+    height: 300px;
+    top: 30%;
+    right: -25%;
+  }
+
+  .spotify-bg::after {
+    width: 250px;
+    height: 250px;
+    left: -15%;
+    top: -15%;
+    filter: blur(30px); /* Increased blur for a smoother effect */
+  }
+}
+
+.glass-effect {
+  position: relative; /* Ensure it stays on top of the background */
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1); /* Subtle glass reflection */
+}
+
+.image-container,
+.song-text {
+  z-index: 9;
+}
+
+/* .image {
+  height: 800px;
+  width: 1200px;
+} */
+.eyedropper {
+  background: var(--palette-color);
+}
+
+.eyedropper::before,
+.eyedropper::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(30px); /* Adds blur effect */
+  z-index: 0;
+}
+
+/* Circle 1 */
+.eyedropper::before {
+  width: 250px;
+  height: 250px;
+  background: var(--palette-gradient-1);
+  top: -60px;
+  left: -50px;
+}
+
+/* Circle 2 */
+.eyedropper::after {
+  width: 200px;
+  height: 200px;
+  background: var(--palette-gradient-2);
+  bottom: -60px;
+  right: -60px;
+}
+
+@media screen and (min-width: 768px) {
+  .eyedropper::before {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    left: -50px;
+  }
+
+  /* Circle 2 */
+  .eyedropper::after {
+    width: 250px;
+    height: 250px;
+    bottom: -60px;
+    right: -60px;
+  }
+}

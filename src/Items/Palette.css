@@ -1,0 +1,30 @@
+.tool-button .bookmark {
+  position: absolute;
+  bottom: 20px;
+  right: 50px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--text-color); /* Bookmark background color */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tool-button:hover .bookmark {
+  opacity: 1;
+  transform: translateY(5px);
+}
+
+.bookmark i {
+  color: var(--button-background-color); /* Download icon color */
+  font-size: 16px;
+}
+
+/* Button grows in width when the text is 'Download Extension' */
+.tool-button.grow {
+  height: 60px; /* Larger width for 'Download Extension' text */
+}
