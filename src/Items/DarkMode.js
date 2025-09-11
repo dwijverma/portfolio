@@ -21,7 +21,7 @@ const DarkMode = () => {
 
   return (
     <div
-      className={`special-border w-full h-full dark-mode ${theme} p-5`}
+      className={`special-border w-full h-full dark-mode ${theme} p-10`}
     >
       <input
         id="switch"

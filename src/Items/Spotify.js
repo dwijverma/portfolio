@@ -73,7 +73,7 @@ const Spotify = () => {
   };
 
   return (
-    <div className="special-border relative flex justify-center items-center spotify-bg w-full h-full">
+    <div className="special-border relative flex justify-center items-center spotify-bg w-full h-full p-2">
       <div className="w-11/12 h-10/12 glass-effect flex flex-row overflow-hidden">
         <div className="w-auto max-w-32 md:max-w-50 image-container h-full">
           <img

@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
 import "./Header.css";
 
-const Header = ({ setFilter, scrollY, fadeIn }) => {
+const Header = ({ setLayout, scrollY, fadeIn }) => {
   const [activeFilter, setActiveFilter] = useState("all");
 
   const handleFilterClick = (filter) => {
     setActiveFilter(filter);
-    setFilter(filter);
+    setLayout(filter);
   };
 
   return (
     <header
-      className={`header ${scrollY > 0 ?  " border-b-1 shadow-black shadow-2xl" : ""}`}
+      className={`header ${
+        scrollY > 0 ? " border-b-1 shadow-black shadow-2xl" : ""
+      }`}
     >
       <div
         className={`filters ${
@@ -36,7 +38,7 @@ const Header = ({ setFilter, scrollY, fadeIn }) => {
           }`}
           onClick={() => handleFilterClick("projects")}
         >
-          Projects
+          Works
         </div>
       </div>
     </header>
